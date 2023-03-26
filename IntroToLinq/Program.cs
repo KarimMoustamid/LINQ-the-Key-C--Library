@@ -1,26 +1,12 @@
-﻿var words = new [] {"a", "b", "c", "d", "e" , "eqeqeq" , "aaa"};
-var wordsLingerThan2Letters = words.Where(word => word.Length > 2);
+﻿var numbers = new List<int> {1 , 2, 3, 4, 5, 6, 7, 8, 9};
 
-// The where method is an extension method on IEnumerable<T> . 
-
-Console.WriteLine(string.Join(", ", wordsLingerThan2Letters));
+var numbersWith10 = numbers.Append(10);
 
 
-// Test 
-
-string multiLineString = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-lorem ipsum dolor sit amet, consectetur adipiscing elit.
-lorem ipsum dolor sit amet, consectetur adipiscing elit.
-lorem ipsum dolor sit amet, consectetur adipiscing elit.
-lorem ipsum dolor sit amet, consectetur adipiscing elit.
-lorem ipsum dolor sit amet, consectetur adipiscing elit.
-";
+// Console.WriteLine("Numbers: " + string.Join(", ", numbers)); 
+// Console.WriteLine("Numbers: " + string.Join(", ", numbersWith10)); 
 
 
-// Extension method
-// static int GetCountOfLines(this string input)
-// {
-//     return input.Split("\n").Length;
-// }
-
-// var contOfLines = multiLineString.GetCountOfLines();
+var oddNumbers = numbers.Where(n => n % 2 == 1).OrderBy(n => n);
+// var orderOddNumbers = oddNumbers.OrderBy(n => n);
+Console.WriteLine("IsOrderOddNumbers: " + string.Join(", ", oddNumbers)); 
